@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Convite de Homenagem ao Professor</title>
@@ -17,10 +18,11 @@
       border-radius: 15px;
       max-width: 700px;
       margin: auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       text-align: center;
       color: #5a2a83;
     }
@@ -40,8 +42,49 @@
       font-weight: bold;
       color: #5a2a83;
     }
+
+    .resposta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .resposta button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-sim {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn-nao {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="convite">
@@ -51,11 +94,13 @@
     <p>Querido <span class="destaque">Professor Moyses</span>,</p>
 
     <p>
-      Com grande alegria e profunda gratidão, convidamos para participar da cerimônia e festa de formatura da Turma de Análise e Desenvolvimento de Sistemas 2022, na qual será homenageado como nosso professor inesquecível.
+      Com grande alegria e profunda gratidão, convidamos para participar da cerimônia e festa de formatura da Turma de
+      Análise e Desenvolvimento de Sistemas 2022, na qual será homenageado como nosso professor inesquecível.
     </p>
 
     <p>
-      Sua dedicação, paciência e paixão pelo ensino marcaram nossas vidas de forma única, e esta homenagem é uma pequena forma de expressar todo o carinho e respeito que sentimos.
+      Sua dedicação, paciência e paixão pelo ensino marcaram nossas vidas de forma única, e esta homenagem é uma pequena
+      forma de expressar todo o carinho e respeito que sentimos.
     </p>
 
     <p>
@@ -64,13 +109,47 @@
       <span class="destaque">Local:</span> Restaurante Madalosso, Av. Manoel Ribas, 5875, Curitiba.
     </p>
 
-    <p>Esperamos contar com a sua presença neste momento tão especial. Lembramos que o convite para os professores será por adesão. Mais informações com a comissão de formatura, a Regiane representa a turma ADS.</p>
+    <p>Esperamos contar com a sua presença neste momento tão especial. Lembramos que o convite para os professores será
+      por adesão. Mais informações com a comissão de formatura, a Regiane representa a turma ADS.</p>
 
     <div class="assinatura">
       Com carinho,<br>
       Turma ADS - IFPR 2022
     </div>
+
+    <div class="resposta">
+      <p><strong>Aceita?</strong></p>
+      <button class="btn-sim" id="sim" onclick="mostrarModal()">Sim</button>
+      <button class="btn-nao" id="nao" onclick="nao()">Não</button>
+    </div>
   </div>
 
+
+  <!-- Modal -->
+  <div class="modal" id="modal" onclick="fecharModalFora(event)">
+    <div class="modal-conteudo">
+      SIMPLES ASSIM!
+    </div>
+  </div>
+
+  <script>
+    function mostrarModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function fecharModalFora(event) {
+      const modalContent = document.querySelector(".modal-conteudo");
+      if (!modalContent.contains(event.target)) {
+        document.getElementById("modal").style.display = "none";
+      }
+    }
+
+    function nao() {
+      alert("Não tem essa opção, tente novamente!");
+      document.getElementById('nao').style.display = "none";
+    }
+  </script>
+
 </body>
+
 </html>
