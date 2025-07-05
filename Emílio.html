@@ -40,6 +40,46 @@
       font-weight: bold;
       color: #5a2a83;
     }
+
+    .resposta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .resposta button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-sim {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn-nao {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
@@ -70,7 +110,23 @@
       Com carinho,<br>
       Turma ADS - IFPR 2022
     </div>
+
+    <div class="resposta">
+      <p><strong>Aceita?</strong></p>
+      <button class="btn-sim" onclick="mostrarModal()">Sim</button>
+      <button class="btn-nao">Não</button>
+    </div>
   </div>
+
+  <div class="modal" id="modal">
+    QUE BELEZAAAA
+  </div>
+
+  <script>
+    function mostrarModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+  </script>
 
 </body>
 </html>
